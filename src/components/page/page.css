@@ -12,4 +12,10 @@
     align-content: center;
     justify-content: center;
     height: 100vh;
+    transition: background-color ease 0.5s;
+}
+
+.red {
+    background-color: #D23C1E;
+    transition: background-color ease 0.5s;
 }
