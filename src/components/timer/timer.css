@@ -41,11 +41,13 @@
 .digitsMin {
     width: 1.2em;
     text-align: right;
+    cursor: ns-resize;
 }
 
 .digitsSec {
     width: 1.2em;
     text-align: left;
+    cursor: ns-resize;
 }
 
 .controls {
