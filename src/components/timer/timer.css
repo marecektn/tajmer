@@ -1,5 +1,4 @@
 
-/* Slido red #D23C1E */
 .center {
 
 }
@@ -17,6 +16,8 @@
     font-size: 2em;
     opacity: 0.4;
     transition: opacity ease 0.3s;
+    margin-left: 0.2em;
+    margin-right: 0.2em
 }
 
 .presetItem:hover {
@@ -60,4 +61,38 @@ button {
 
 button:hover {
     cursor: pointer;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1.0;
+        animation-timing-function: ease;
+    }
+    50% {
+        opacity: 0.3;
+        animation-timing-function: ease;
+    }
+    100% {
+        opacity: 1.0;
+        animation-timing-function: ease;
+    }
+}
+@-webkit-keyframes blink {
+    0% {
+        opacity: 1.0;
+        animation-timing-function: ease;
+    }
+    50% {
+        opacity: 0.4;
+        animation-timing-function: ease;
+    }
+    100% {
+        opacity: 1.0;
+        animation-timing-function: ease;
+    }
+}
+
+.blink {
+    animation: blink 1s step-start 0s infinite;
+    -webkit-animation: blink 1s step-start 0s infinite;
 }

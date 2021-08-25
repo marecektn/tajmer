@@ -58,7 +58,7 @@ export function Timer() {
         <div className='center'>
             <div className='time'>
                 <span className='digitsMin'>{min}</span>
-                <span>:</span>
+                <span className={ running ? 'blink' : ''}>:</span>
                 <span className='digitsSec'>{sec}</span>
             </div>
 
