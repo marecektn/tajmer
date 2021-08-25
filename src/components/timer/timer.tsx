@@ -27,6 +27,7 @@ function isExcess(time: number, elapsed: number): boolean {
 
 export function Timer(props: { excess: (b: boolean) => void }) {
 
+    const {excess} = props;
     const [running, setRunning] = useState(false);
     const [time, setTime] = useState(10);
     const [elapsed, setElapsed] = useState(0);
@@ -54,11 +55,11 @@ export function Timer(props: { excess: (b: boolean) => void }) {
 
         const handler = setTimeout(() => {
             setElapsed(elapsedRef.current + 1);
-            isExcess(time, elapsed) && props.excess(true);
+            isExcess(time, elapsed) && excess(true);
         }, 1000);
 
         return () => clearTimeout(handler);
-    }, [elapsed, running]);
+    }, [elapsed, running, time, excess]);
 
     const [min, sec] = timeLabel(time, elapsed);
 
