@@ -19,10 +19,10 @@ function timeLabel(time: number, elapsed: number): string[] {
     return formatTime(Math.abs(time - elapsed));
 }
 
-export function Timer(props: { propTime: number }) {
+export function Timer() {
 
     const [running, setRunning] = useState(false);
-    const [time, setTime] = useState(props.propTime);
+    const [time, setTime] = useState(10);
     const [elapsed, setElapsed] = useState(0);
     const elapsedRef = useRef(elapsed);
     elapsedRef.current = elapsed;
@@ -35,10 +35,10 @@ export function Timer(props: { propTime: number }) {
         setRunning(false);
     }
 
-    useEffect(() => {
-        setTime(props.propTime);
+    function resetTime(value: number) {
         setElapsed(0);
-    }, [props.propTime]);
+        setTime(value);
+    }
 
     useEffect(() => {
         if (!running) {
@@ -57,10 +57,18 @@ export function Timer(props: { propTime: number }) {
     return (
         <div className='center'>
             <div className='time'>
-                <span className='digits'>{min}</span>
+                <span className='digitsMin'>{min}</span>
                 <span>:</span>
-                <span className='digits'>{sec}</span>
+                <span className='digitsSec'>{sec}</span>
             </div>
+
+            <div className={running ? 'presets opacityZero' : 'presets' } hidden={running}>
+                <div className='presetItem' onClick={() => resetTime(30)}>30 s</div>
+                <div className='presetItem' onClick={() => resetTime(60)}>1 m</div>
+                <div className='presetItem' onClick={() => resetTime(300)}>5 m</div>
+                <div className='presetItem' onClick={() => resetTime(600)}>10 m</div>
+            </div>
+
             <div className='controls'>
                 {
                     running

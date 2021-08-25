@@ -1,6 +1,33 @@
 
+/* Slido red #D23C1E */
 .center {
-    background-color: #D23C1E;
+
+}
+
+.presets {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    opacity: 1;
+    transition: opacity ease 0.3s;
+}
+
+.presetItem {
+    padding: 0.4em;
+    font-size: 2em;
+    opacity: 0.4;
+    transition: opacity ease 0.3s;
+}
+
+.presetItem:hover {
+    cursor: progress;
+    opacity: 1;
+    transition: opacity ease 0.3s;
+}
+
+.opacityZero {
+    opacity: 0;
+    transition: opacity ease 0.3s;
 }
 
 .time {
@@ -10,15 +37,25 @@
     font-weight: 600;
 }
 
-.digits {
-    width: 1.24em;
+.digitsMin {
+    width: 1.2em;
+    text-align: right;
+}
+
+.digitsSec {
+    width: 1.2em;
+    text-align: left;
+}
+
+.controls {
     text-align: center;
 }
 
 button {
-    font-size: 2em;
+    font-size: 4em;
     background-color: transparent;
     border: none;
+    padding: 0.4em;
 }
 
 button:hover {
