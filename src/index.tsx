@@ -3,6 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import {Page} from "./components/page/page";
+import './fonts/SlidoSans-Bold.otf';
+import './fonts/SlidoSans-DemiBold.otf';
+import './fonts/SlidoSans-Medium.otf';
+import './fonts/SlidoSans-Regular.otf';
 
 ReactDOM.render(
   <React.StrictMode>

@@ -1,5 +1,26 @@
 
 .center {
-    background-color: red;
-    width: 200px;
+    background-color: #D23C1E;
+}
+
+.time {
+    font-size: 14em;
+    padding: 48px;
+    display: flex;
+    font-weight: 600;
+}
+
+.digits {
+    width: 1.24em;
+    text-align: center;
+}
+
+button {
+    font-size: 2em;
+    background-color: transparent;
+    border: none;
+}
+
+button:hover {
+    cursor: pointer;
 }

@@ -1,0 +1,72 @@
+
+.thin {
+    font-weight: 200;
+}
+
+.light {
+    font-weight: 300;
+}
+
+.normal {
+    font-weight: 400;
+}
+
+.regular {
+    font-weight: 500;
+}
+
+.medium {
+    font-weight: 600;
+}
+
+.demibold {
+    font-weight: 700;
+}
+
+.bold {
+    font-weight: 800;
+}
+
+/*
+@font-face {
+    font-family: 'SlidoSans';
+    font-weight: 200;
+    src: local('SlidoSans'), url(./fonts/SlidoSans-Thin.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'SlidoSans';
+    font-weight: 300;
+    src: local('SlidoSans'), url(./fonts/SlidoSans-Light.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'SlidoSans';
+    font-weight: 400;
+    src: local('SlidoSans'), url(./fonts/SlidoSans-Normal.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'SlidoSans';
+    font-weight: 500;
+    src: local('SlidoSans'), url(./fonts/SlidoSans-Regular.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'SlidoSans';
+    font-weight: 600;
+    src: local('SlidoSans'), url(./fonts/SlidoSans-Medium.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'SlidoSans';
+    font-weight: 700;
+    src: local('SlidoSans'), url(./fonts/SlidoSans-DemiBold.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'SlidoSans';
+    font-weight: 800;
+    src: local('SlidoSans'), url(./fonts/SlidoSans-Bold.otf) format('opentype');
+}
+*/
