@@ -6,6 +6,10 @@ function isExcess(time: number, elapsed: number): boolean {
     return Math.trunc(time) - Math.trunc(elapsed) === 0;
 }
 
+function isOvertime(time: number, elapsed: number): boolean {
+    return Math.trunc(time) - Math.trunc(elapsed) < 0;
+}
+
 export function Timer(props: { excess: (b: boolean) => void }) {
 
     const {excess} = props;
@@ -16,6 +20,8 @@ export function Timer(props: { excess: (b: boolean) => void }) {
     const [elapsed, setElapsed] = useState(0);
     const elapsedRef = useRef(elapsed);
     elapsedRef.current = elapsed;
+
+    const overtime = isOvertime(time, elapsed);
 
     function resetTime(value: number) {
         setElapsed(0);
@@ -34,9 +40,10 @@ export function Timer(props: { excess: (b: boolean) => void }) {
         }, 1000);
 
         return () => clearTimeout(handler);
-    }, [elapsed, running, time, excess]);
+    }, [elapsed, running, overtime, excess, time]);
 
     const [min, sec] = timeLabel(time, elapsed);
+
 
     return (
         <div className='center'>
@@ -45,8 +52,8 @@ export function Timer(props: { excess: (b: boolean) => void }) {
                 <span className={running ? 'blink' : ''}>:</span>
                 <span className='digitsSec'>{sec}</span>
             </div>
-
-            <div className={['presets', running ? 'opacityZero' : ''].join(' ')} hidden={running}>
+            <div className={['overtime', overtime ? '' : 'opacityZero'].join(' ')}>overtime</div>
+            <div className={['presets', running ? 'opacityZero' : ''].join(' ')}>
                 <div className='presetItem' onClick={() => resetTime(30)}>30 s</div>
                 <div className='presetItem' onClick={() => resetTime(60)}>1 m</div>
                 <div className='presetItem' onClick={() => resetTime(300)}>5 m</div>
