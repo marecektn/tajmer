@@ -23,6 +23,28 @@
 }
 
 
+html, body {
+  font-size: 18px;
+}
+
+@media only screen and (max-width: 800px) {
+  html, body {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  html, body {
+    font-size: 10px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  html, body {
+    font-size: 8px;
+  }
+}
+
 body, button {
   margin: 0;
   font-family: 'SlidoSans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
