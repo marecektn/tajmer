@@ -1,46 +1,21 @@
 import './timer.css';
 import {useEffect, useRef, useState} from "react";
-
-function formatZero(num: number): string {
-    return num < 10 ? `0${num}` : `${num}`;
-}
-
-function formatTime(time: number): string[] {
-    if (time > 59) {
-        const min = Math.trunc(time / 60);
-        const sec = Math.trunc(time % 60);
-        return [formatZero(min), formatZero(sec)];
-    } else {
-        return ['00', formatZero(time)];
-    }
-}
-
-function timeLabel(time: number, elapsed: number): string[] {
-    return formatTime(Math.abs(time - elapsed));
-}
+import {timeLabel} from "../../utils/formatter";
 
 function isExcess(time: number, elapsed: number): boolean {
-    const t = Math.trunc(time);
-    const e = Math.trunc(elapsed);
-    return t - e === 0;
+    return Math.trunc(time) - Math.trunc(elapsed) === 0;
 }
 
 export function Timer(props: { excess: (b: boolean) => void }) {
 
     const {excess} = props;
+
     const [running, setRunning] = useState(false);
     const [time, setTime] = useState(10);
+
     const [elapsed, setElapsed] = useState(0);
     const elapsedRef = useRef(elapsed);
     elapsedRef.current = elapsed;
-
-    function onStart() {
-        setRunning(true);
-    }
-
-    function onStop() {
-        setRunning(false);
-    }
 
     function resetTime(value: number) {
         setElapsed(0);
@@ -81,8 +56,8 @@ export function Timer(props: { excess: (b: boolean) => void }) {
             <div className='controls'>
                 {
                     running
-                        ? <button onClick={() => onStop()}>stop</button>
-                        : <button onClick={() => onStart()}>start</button>
+                        ? <button onClick={() => setRunning(false)}>stop</button>
+                        : <button onClick={() => setRunning(true)}>start</button>
                 }
             </div>
         </div>
